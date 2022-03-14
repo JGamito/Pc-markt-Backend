@@ -5,8 +5,15 @@ const Brands = require("./src/routes/brands");
 
 app.use(express.json());
 
+
 app.use("/brands", Brands);
 
-app.listen(port, "", () => {
-  console.log(`App running on port: ${port}`);
-});
+app.get('/',(req, res, next)=>{
+    res.json({message:'Its working'})
+})
+
+
+app.listen(port, '', ()=>{
+console.log(`App running on port: ${port}`)
+})
+
