@@ -1,14 +1,11 @@
-const express = require('express');
-const app = express()
+const express = require("express");
+const app = express();
 const port = process.env.PORT || 8000;
+const categories = require("./src/routes/categories");
 
 app.use(express.json());
+app.use("/categoris", categorie);
 
-app.get('/',(req, res, next)=>{
-    res.json({message:'Its working'})
-})
-
-
-app.listen(port, '', ()=>{
-console.log(`App running on port: ${port}`)
-})
+app.listen(port, "", () => {
+  console.log(`App running on port: ${port}`);
+});
