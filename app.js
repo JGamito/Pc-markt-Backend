@@ -4,7 +4,7 @@ const port = process.env.PORT || 8000;
 const categories = require("./src/routes/categories");
 
 app.use(express.json());
-app.use("/categoris", categorie);
+app.use("/categories", categories);
 
 app.listen(port, "", () => {
   console.log(`App running on port: ${port}`);
