@@ -14,8 +14,12 @@ const Brand = mongoose.model("Brand", brandsSchema);
 const productsSchemas = require("./schemas/products");
 const Product = mongoose.model("Products", productsSchemas);
 
+const ordersSchema= require('./schemas/orders');
+const Orders = mongoose.model('orders',ordersSchema)
+
 module.exports = {
   Brand,
   Category,
   Product,
+  Orders,
 };
