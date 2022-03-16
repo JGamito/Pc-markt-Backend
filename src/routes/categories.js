@@ -6,9 +6,6 @@ router.get('/',async(req, res, next)=>{
    
         const categories = await SeviceCategory.readAll();
         res.json(categories);
-     
-
-    res.json()
 }) 
 
 

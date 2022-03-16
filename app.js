@@ -1,6 +1,8 @@
+require('dotenv');
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
+const port = parseInt(process.env.PORT) || 8000
+
 const categories = require("./src/routes/categories");
 
 app.use(express.json());

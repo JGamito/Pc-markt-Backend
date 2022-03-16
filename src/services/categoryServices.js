@@ -1,7 +1,7 @@
-const {category} =require('./../routes/models/mongoose')
+const {Category} =require('../models/mongoose')
 
 const readAll = async () => {
-    return await category.find();
+    return await Category.find();
 }
 
 

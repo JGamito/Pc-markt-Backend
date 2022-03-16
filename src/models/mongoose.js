@@ -6,10 +6,10 @@ const DATABASE= process.env.DATABASE;
 
 mongoose.connect(`${DB_URL}/${DATABASE}`)
 
-const categorySchema =('./schemas/categories.js');
-const category = mongoose.model('categories', categorySchema);
+const categorySchema =require('./schemas/categories.js');
+const Category = mongoose.model('categories', categorySchema);
 
 
 module.exports = {
-    category,
+    Category,
 }
