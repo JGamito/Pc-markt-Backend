@@ -16,10 +16,13 @@ const Product = mongoose.model("Products", productsSchemas);
 
 const userSchema = require("./schemas/user");
 const User = mongoose.model("User", userSchema);
+const ordersSchema= require('./schemas/orders');
+const Orders = mongoose.model('orders',ordersSchema)
 
 module.exports = {
   Brand,
   Category,
   Product,
   User,
+  Orders,
 };
