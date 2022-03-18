@@ -1,13 +1,10 @@
-
-const {Product} = requiere('./../models/mongoose');
-const checker = require('../services/errors');
-
+const { Product } = require("./../models/mongoose");
+const checker = require("../services/errors");
 
 const readAll = async () => {
-    return await Product.find();
-  };
+  return await Product.find();
+};
 
-
-  module.exports = {
-      readAll,
-  }
+module.exports = {
+  readAll,
+};

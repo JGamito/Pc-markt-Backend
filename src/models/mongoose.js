@@ -16,8 +16,11 @@ const Product = mongoose.model("Products", productsSchemas);
 
 const userSchema = require("./schemas/user");
 const User = mongoose.model("User", userSchema);
-const ordersSchema= require('./schemas/orders');
-const Orders = mongoose.model('orders',ordersSchema)
+const ordersSchema = require("./schemas/orders");
+const Orders = mongoose.model("orders", ordersSchema);
+
+const orderProductsSchema = require("./schemas/orderProducts");
+const OrderProduct = mongoose.model("orderProducts", orderProductsSchema);
 
 module.exports = {
   Brand,
@@ -25,4 +28,5 @@ module.exports = {
   Product,
   User,
   Orders,
+  OrderProduct,
 };
