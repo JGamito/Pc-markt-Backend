@@ -1,6 +1,6 @@
 const router = require ('express').Router();
 const { checkErrors } = require('../services/errors');
-const ProductsService = require('./../services/ProductService');
+const ProductsService = require('./../services/ProductsService');
 
 
 

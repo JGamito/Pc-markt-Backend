@@ -1,5 +1,5 @@
 
-const {Product} = requiere('./../models/mongoose');
+ const {Product} = require('./../models/mongoose');
 const checker = require('../services/errors');
 
 

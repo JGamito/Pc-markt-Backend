@@ -14,7 +14,7 @@ const Brand = mongoose.model("Brand", brandsSchema);
 const productsSchemas = require("./schemas/products");
 const Product = mongoose.model("Products", productsSchemas);
 
-const userSchema = require("./schemas/user");
+const userSchema = require("./schemas/users");
 const User = mongoose.model("User", userSchema);
 const ordersSchema= require('./schemas/orders');
 const Orders = mongoose.model('orders',ordersSchema)

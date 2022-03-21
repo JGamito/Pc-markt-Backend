@@ -4,11 +4,11 @@ module.exports = {
     title: String,
     description: String,
     brandId: {
-        type:mongoose.Schema.Types.ObjetId,
+        type:mongoose.Schema.Types.ObjectId,
         ref: 'Brand',
     },
     categoryId: {
-        type: mongoose.Schema.Types.ObjetId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
     },
     priceMax: Number,
