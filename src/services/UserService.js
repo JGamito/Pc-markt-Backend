@@ -1,4 +1,4 @@
-const { User } = requiere("./../models/mongoose");
+const { User } = require("./../models/mongoose");
 const checker = require("./../services/errors");
 
 const create = async (document) => {
@@ -11,6 +11,27 @@ const create = async (document) => {
   return user;
 };
 
+const findById = async (id) => {
+  await checker.throwErrorIfDocumentDoesNotExist({ id, model: User });
+  return await User.findById(id);
+};
+
+const update = async (id, document) => {
+  await checker.throwErrorIfDocumentDoesNotExist({ id, model: User });
+  return User.findByIdAndUpdate(id, document, { new: true });
+};
+
+const remove = async (id) => {
+  await checker.throwErrorIfDocumentDoesNotExist({ id, model: User });
+  const result = await User.findOneAndDelete(id);
+ return result;
+}
+
+
+
 module.exports = {
   create,
+  findById,
+  update,
+  remove,
 };
