@@ -4,11 +4,7 @@ const errors = require("./errors");
 
 const create = async (document) => {
   try {
-    const orderProducts = await new OrderProduct(document).save();
-    await OrderProduct.findByIdAndUpdate(orderProducts.orderId, {
-      $push: { orderProducts: orderProducts._id },
-    });
-    return orderProducts;
+    await OrderProduct.create(document);
   } catch (err) {
     throw err;
   }
