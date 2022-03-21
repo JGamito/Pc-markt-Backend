@@ -4,9 +4,8 @@ const errors = require("./errors");
 
 const create = async (document) => {
   try {
-    await errors.throwErrorIfRelatedDoesNotExist({ id, model: OrderProduct });
     const orderProducts = await new OrderProduct(document).save();
-    await OrderProduct.findByIdAndUpdate(orderProducts.idPanel, {
+    await OrderProduct.findByIdAndUpdate(orderProducts.orderId, {
       $push: { orderProducts: orderProducts._id },
     });
     return orderProducts;
