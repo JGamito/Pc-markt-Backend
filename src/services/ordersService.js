@@ -20,10 +20,7 @@ const read = async (id) => {
 };
 
 const update = async (id, document) => {
-  const order = await Orders.findById(id);
-  Orders.set({ ...order.toObject(), ...document, updatedAt: Date.now() });
-  await order.save();
-  return order;
+ await Orders.findByIdAndUpdate(id, document);
 };
 
 const remove = async (id) => {
