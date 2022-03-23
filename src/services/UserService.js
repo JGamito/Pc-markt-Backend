@@ -1,3 +1,4 @@
+const { email } = require("../models/schemas/users");
 const { User } = require("./../models/mongoose");
 const checker = require("./../services/errors");
 
@@ -10,6 +11,9 @@ const create = async (document) => {
   await user.save();
   return user;
 };
+const findByEmail= async (email)=>{
+  return await User.findOne({email})
+}
 
 const findById = async (id) => {
   await checker.throwErrorIfDocumentDoesNotExist({ id, model: User });
@@ -34,4 +38,5 @@ module.exports = {
   findById,
   update,
   remove,
+  findByEmail,
 };
