@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const ServiceOrder = require("../services/ordersService");
+const { validateCreateOrders } = require("./validations/orders");
 
-router.post("/", validateCreateOrder, async (req, res, next) => {
+router.post("/", validateCreateOrders, async (req, res, next) => {
   try {
     const document = req.body;
     const { userId } = req;
@@ -11,3 +12,5 @@ router.post("/", validateCreateOrder, async (req, res, next) => {
     next(err);
   }
 });
+
+module.exports = router;
