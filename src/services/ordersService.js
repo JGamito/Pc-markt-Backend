@@ -6,9 +6,6 @@ const create = async (document) => {
   try {
     await errors.throwErrorIfRelatedDoesNotExist({ id, model: Orders });
     const order = await new Orders(document).save();
-    await Orders.findByIdAndUpdate(orders.idPanel, {
-      $push: { order: order._id },
-    });
     return order;
   } catch (err) {
     throw err;
@@ -33,6 +30,9 @@ const remove = async (id) => {
   const result = await Orders.findByIdAndDelete(id);
   return result !== null;
 };
+const checkOut = async (id) => {
+  await Orders.findByIdAndUpdate(id, { status: "paid_out" });
+};
 
 module.exports = {
   create,
@@ -40,4 +40,5 @@ module.exports = {
   read,
   update,
   remove,
+  checkOut,
 };

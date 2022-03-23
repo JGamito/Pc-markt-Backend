@@ -12,5 +12,10 @@ router.post("/", validateCreateOrders, async (req, res, next) => {
     next(err);
   }
 });
+router.put("/:id/checkout", async (req, res, next) => {
+  const { id } = req.params;
+  await ServiceOrder.checkOut(id);
+  res.status(204).json();
+});
 
 module.exports = router;
