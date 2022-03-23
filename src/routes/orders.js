@@ -11,3 +11,14 @@ router.post("/", validateCreateOrder, async (req, res, next) => {
     next(err);
   }
 });
+
+router.put('/:id', validateUpdateOrder, async (req, res, next) => {
+  try {
+    const document = req.body;
+    const { id } = req.params;
+    await ServiceOrder.update(id, document);
+    res.status(201).json();
+  } catch (err) {
+    next(err);
+  }
+});
