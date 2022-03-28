@@ -2,5 +2,6 @@
 
 module.exports = {
     name:String,
-    slug:String
+    slug:String,
+    logo:URL
 }
