@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 let port = process.env.PORT || 8000;
 const product = require("./src/routes/products");
@@ -11,7 +12,10 @@ const login = require("./src/routes/Auth");
 const orders = require("./src/routes/orders");
 
 const users = require("./src/routes/users");
+
 app.use(express.json());
+app.use(cors());
+app.options("*", cors());
 
 app.get("/", (req, res, next) => {
   res.json({ message: "Its working" });
