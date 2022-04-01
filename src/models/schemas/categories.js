@@ -1,7 +1,4 @@
-
-
 module.exports = {
-    name:String,
-    slug:String,
-    logo:URL
-}
+  name: String,
+  slug: String,
+};
