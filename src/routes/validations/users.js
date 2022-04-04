@@ -1,124 +1,155 @@
-const { validateRoute } = require('express-ajv-middleware');
+const { validateRoute } = require("express-ajv-middleware");
 
 const validateCreateUsers = validateRoute({
   body: {
-    type: 'object',
+    type: "object",
     properties: {
       name: {
-        type: "string"
+        type: "string",
       },
       surname: {
-        type: "string"
+        type: "string",
       },
       email: {
-        type: "string"
+        type: "string",
       },
       password: {
-        type: "string"
+        type: "string",
       },
-      adress: {
-        type:"string"
+      street: {
+        type: "string",
+      },
+      city: {
+        type: "string",
+      },
+      province: {
+        type: "string",
+      },
+      postalCode: {
+        type: "number",
+      },
+      streetExtra: {
+        type: "string",
       },
       phone: {
-          type: "number"
+        type: "tel",
       },
       status: {
-          type "string"
+        type: "string",
       },
-
     },
-
     required: [
       "name",
       "surname",
       "email",
       "password",
-      "adress",
+      "street",
+      "city",
+      "province",
+      "postalCode",
       "phone",
-      "status"
-    ]
-  }
+      "status",
+    ],
+  },
 });
 
 const validateUpdateUsers = validateRoute({
-    body: {
-        type: 'object',
-        properties: {
-          name: {
-            type: "string"
-          },
-          surname: {
-            type: "string"
-          },
-          email: {
-            type: "string"
-          },
-          password: {
-            type: "string"
-          },
-          adress: {
-            type: "string"
-          },
-          phone: {
-              type: "number"    
-          },
-
-          status: {
-              type "string"
-          },
-          completed: {
-              type: "boolean"
-          }
-    
-        },
+  body: {
+    type: "object",
+    properties: {
+      name: {
+        type: "string",
+      },
+      surname: {
+        type: "string",
+      },
+      email: {
+        type: "string",
+      },
+      password: {
+        type: "string",
+      },
+      street: {
+        type: "string",
+      },
+      city: {
+        type: "string",
+      },
+      province: {
+        type: "string",
+      },
+      postalCode: {
+        type: "number",
+      },
+      streetExtra: {
+        type: "string",
+      },
+      phone: {
+        type: "tel",
+      },
+      status: {
+        type: "string",
+      },
+    },
     required: [
-        "name",
-        "surname",
-        "email",
-        "password",
-        "adress",
-        "phone",
-        "status"
-    ]
-  }
+      "name",
+      "surname",
+      "email",
+      "password",
+      "street",
+      "city",
+      "province",
+      "postalCode",
+      "phone",
+      "status",
+    ],
+  },
 });
 
 const validatePatchUsers = validateRoute({
-    body: {
-        type: 'object',
-        properties: {
-          name: {
-            type: "string"
-          },
-          surname: {
-            type: "string"
-          },
-          email: {
-            type: "string"
-          },
-          password: {
-            type: "string"
-          },
-          adress: {
-            type: "string"
-          },
-          phone: {
-              type: "number"
-          },
-          status: {
-              type "string"
-          },
-          completed {
-            type "boolean"
-          },
-    
-        },
-    required: [],
-  }
+  body: {
+    type: "object",
+    properties: {
+      name: {
+        type: "string",
+      },
+      surname: {
+        type: "string",
+      },
+      email: {
+        type: "string",
+      },
+      password: {
+        type: "string",
+      },
+      street: {
+        type: "string",
+      },
+      city: {
+        type: "string",
+      },
+      province: {
+        type: "string",
+      },
+      postalCode: {
+        type: "number",
+      },
+      streetExtra: {
+        type: "string",
+      },
+      phone: {
+        type: "tel",
+      },
+      status: {
+        type: "string",
+      },
+    },
+  },
+  required: [],
 });
 
 module.exports = {
   validateCreateUsers,
   validatePatchUsers,
   validateUpdateUsers,
-} 
+};
