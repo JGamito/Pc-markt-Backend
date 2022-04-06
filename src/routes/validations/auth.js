@@ -47,7 +47,7 @@ const validateRegister = validateRoute({
         type: "string",
       },
       phone: {
-        type: "tel",
+        type: "number",
       },
       status: {
         type: "string",

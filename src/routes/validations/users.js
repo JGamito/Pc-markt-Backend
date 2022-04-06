@@ -32,7 +32,7 @@ const validateCreateUsers = validateRoute({
         type: "string",
       },
       phone: {
-        type: "tel",
+        type: "number",
       },
       status: {
         type: "string",
@@ -85,7 +85,7 @@ const validateUpdateUsers = validateRoute({
         type: "string",
       },
       phone: {
-        type: "tel",
+        type: "number",
       },
       status: {
         type: "string",
@@ -138,7 +138,7 @@ const validatePatchUsers = validateRoute({
         type: "string",
       },
       phone: {
-        type: "tel",
+        type: "number",
       },
       status: {
         type: "string",
