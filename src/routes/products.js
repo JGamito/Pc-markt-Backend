@@ -16,5 +16,14 @@ router.get("/:id", async (req, res, next) => {
     next(err);
   }
 });
+router.get("/category/:categoryId", async (req, res, next) => {
+  try {
+    const { categoryId } = req.params;
+    const todo = await ProductsService.findByCategoryId(categoryId);
+    res.json(todo);
+  } catch (err) {
+    next(err);
+  }
+});
 
 module.exports = router;

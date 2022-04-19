@@ -6,11 +6,15 @@ const readAll = async () => {
 };
 
 const read = async (id) => {
-  await checker.throwErrorIfDocumentDoesNotExist({ id, model:Product  });
+  await checker.throwErrorIfDocumentDoesNotExist({ id, model: Product });
   return await Product.findById(id);
+};
+const findByCategoryId = async (categoryId) => {
+  return await Product.find({ categoryId });
 };
 
 module.exports = {
   readAll,
-  read
+  read,
+  findByCategoryId,
 };
